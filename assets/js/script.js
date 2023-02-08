@@ -8,23 +8,18 @@ $.ajax({
     console.log("Title:", response.title);
     console.log("Description:", response.explanation);
     console.log("Image URL:", response.url);
+    console.log(`-------------------------------------------------`)
   });
+
+
+
+  const queryURL = `https://api.le-systeme-solaire.net/rest/`;
   
-
-
-
-
-  const settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://space-news.p.rapidapi.com/news/guardian",
-	"method": "GET",
-	"headers": {
-		"X-RapidAPI-Key": "5eee59729amsh14ba8d2e0c49119p1e060fjsn0283d7f8a93c",
-		"X-RapidAPI-Host": "space-news.p.rapidapi.com"
-	}
-};
-
-$.ajax(settings).done(function (response) {
-	console.log(response);
-});
+  $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
+      console.log("Title:", response.info.title);
+      console.log("Description:", response.info.description);
+      console.log(`-------------------------------------------------`)
+    });
