@@ -13,13 +13,14 @@ $.ajax({
 
 
 
-  const queryURL = `https://api.le-systeme-solaire.net/rest/`;
-  
-  $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function(response) {
-      console.log("Title:", response.info.title);
-      console.log("Description:", response.info.description);
-      console.log(`-------------------------------------------------`)
-    });
+const queryURLNasaPhoto = `https://images-api.nasa.gov/search?q=mars`;
+
+$.ajax({
+    url: queryURLNasaPhoto,
+    method: "GET"
+  }).then(function(response) {
+    console.log("Title:", response.collection.items[1].data[0].title);
+    console.log("Description:", response.collection.items[1].data[0].description);
+    console.log("Image URL:", response.collection.items[1].links[0].href);
+    console.log(`-------------------------------------------------`)
+  });
