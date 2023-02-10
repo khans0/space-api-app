@@ -18,36 +18,57 @@
 </head>
 
 <body>
-  <!--Navigation Bar-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">'icon'</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-       <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Gallery</a>
-      </li> 
-      <li class="nav-item">
-        <a class="nav-link" href="#">News</a>
-      </li> 
-      <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
-      </li>      
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
-    
-    
+    <!--Navigation Bar-->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">'icon'</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Gallery</a>
+            </li> 
+            <li class="nav-item">
+              <a class="nav-link" href="#">News</a>
+            </li> 
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>      
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+<div class="container mt-5">
+  <div class="row">
+
+    <!-- Picture of the Day Section -->
+      <section class="col-xs-12 col-12">
+        <div class="container text-center">
+            <div class="row" id="head-spacePicture">
+                <h2 class="text-center">Space Picture of the Day</h2>
+            </div>
+            <div class="row pb-lg-2 justify-content-center" id="head-spacePicture">
+              <img id="pod-image-url" class="img-fluid rounded mx-auto d-block" src="" alt="">
+            </div>
+              <div class="row pb-lg-2 justify-content-center" id="head-spacePicture">
+                <h3 id="pod-title"></h3>
+            </div>
+              <div class="row pb-lg-2" id="head-spacePicture">
+                  <p class="text-justify" id="pod-description"></p>
+              </div>
+          </div>
+      </section>
+  
     <!-- Today's Gallery Section -->
     <section>
         <div class="container-fluid my-5 mt-3">
@@ -174,7 +195,7 @@
         <div class="container-fluid my-5 text-center mt-3">
             <h2 class="mb-3">Contact Us</h2>
             <div class="row">
-              <div class="col-12">
+              <div class="col-12 col-sm-12">
                 <form>
                     <div class="form-group row">
                         <div class="col-sm-6">
@@ -201,54 +222,9 @@
         </div>          
     </section>
 
-    <div class="container-fluid">
-        <div class="row">
-
-            <section class="col-xs-12 col-lg-4">
-                <div class="row " id="head-spacePicture">
-                    <h2 class="">Space Picture of the Day</h2>
-                </div>
-
-            </section>
-
-            <section class="col-xs-12 col-lg-4" id="spacePicture">
-                <div class="row pb-lg-1 justify-content-center" id="head-spacePicture">
-                    <h2 class=" ">Space Picture of the Day</h2>
-                </div>
-                <div class="row pb-lg-2 justify-content-center" id="head-spacePicture">
-                    <img id="pod-image-url" class="img-fluid rounded mx-auto d-block" src="" 
-                        alt="">
-                </div>
-
-                <div class="row pb-lg-2" id="head-spacePicture">
-                    <p class="text-justify" id="pod-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore laborum perferendis
-                        aperiam expedita voluptates deserunt explicabo quo molestias! Nam repellat architecto ut
-                        reiciendis
-                        facere ad soluta voluptates cupiditate velit facilis? </p>
-                </div>
-                <div class="row pb-lg-2 justify-content-center" id="head-spacePicture">
-                    <h3 id="pod-title">Lorem ipsum dolor sit amet.</h3>
-                </div>
-                <div class="row pb-lg-2 " id="head-spacePicture">
-                    <button type="button" class="btn btn-primary btn-block"><i class="fa fa-paper-plane"></i>Click Get Coordinates</button>
-                </div>
-
-
-
-            </section>
-
-            <section class="col-xs-12 col-lg-4">
-                <div class="row" id="head-spacePicture">
-                    <h2 class="text-center">Space Picture of the Day</h2>
-                </div>
-
-
-            </section>
-
-        </div>
-    </div>
-
-
+  </div>
+</div>
+    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
