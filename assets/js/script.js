@@ -9,6 +9,9 @@ $.ajax({
     console.log("Description:", response.explanation);
     console.log("Image URL:", response.url);
     console.log(`-------------------------------------------------`)
+    $("#pod-title").text(response.title);
+    $("#pod-description").text(response.explanation);
+    $("#pod-image-url").attr("src", response.url);
   });
 
 
