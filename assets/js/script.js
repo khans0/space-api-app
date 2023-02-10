@@ -19,11 +19,20 @@ $.ajax({
 const queryURLNasaPhoto = `https://images-api.nasa.gov/search?q=mars`;
 
 $.ajax({
-    url: queryURLNasaPhoto,
-    method: "GET"
-  }).then(function(response) {
-    console.log("Title:", response.collection.items[1].data[0].title);
-    console.log("Description:", response.collection.items[1].data[0].description);
-    console.log("Image URL:", response.collection.items[1].links[0].href);
-    console.log(`-------------------------------------------------`)
-  });
+  url: queryURLNasaPhoto,
+  method: "GET"
+}).then(function(response) {
+  let images = response.collection.items;
+
+  for(let i = 0; i < 4; i++) {
+    let imageURL = images[i].links[0].href;
+
+    let galleryHTML = `
+      <div class="col-3">
+        <img src="${imageURL}" alt="" class="img-fluid" style="height:200px">
+      </div>
+    `;
+
+    $("#today-gallery").append(galleryHTML);
+  }
+});
