@@ -5,10 +5,10 @@ $.ajax({
     url: queryURLNasa,
     method: "GET"
   }).then(function(response) {
-    console.log("Title:", response.title);
-    console.log("Description:", response.explanation);
-    console.log("Image URL:", response.url);
-    console.log(`-------------------------------------------------`)
+    //console.log("Title:", response.title);
+    //console.log("Description:", response.explanation);
+    //console.log("Image URL:", response.url);
+    //console.log(`-------------------------------------------------`)
     $("#pod-title").text(response.title);
     $("#pod-description").text(response.explanation);
     $("#pod-image-url").attr("src", response.url);
@@ -28,8 +28,8 @@ $.ajax({
     let imageURL = images[i].links[0].href;
 
     let galleryHTML = `
-      <div class="col-3">
-        <img src="${imageURL}" alt="" class="img-fluid" style="height:200px">
+      <div class="col-md-3 col-lg-3 col-sm-12">
+        <img src="${imageURL}" alt="" class="img-fluid border-color gallery-img">
       </div>
     `;
 
