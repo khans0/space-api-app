@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="./assets/css/reset.css" type="text/css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <title>Space Jam Project</title>
@@ -27,11 +33,13 @@
 <body>
 
   <!-- Modal -->
+  <!-- https://getbootstrap.com/docs/4.0/components/modal/ -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title text-color" id="exampleModalLabel">Get Coordinates</h5>
+          <!-- hide - data-dismiss="modal" -->
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -112,8 +120,8 @@
 </div>
 
   <div class="container-fluid text-center section-bg p-3" id="get-coordinates-section">
-    <div class="row">
-      <div class="col-12" id="get-coordinates">
+    <div class="row" id="get-coordinates">
+      <div class="col-12" >
         <h3 class="mb-3">Track the International Space Station</h3>
         <button class="btn btn-outline-light btn-md" data-toggle="modal" data-target="#exampleModal">Click to Get Coordinates</button> 
       </div>
@@ -236,15 +244,13 @@
   </div>
 </div>
     
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
+   
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 
     <script src="./assets/js/config.js"></script>
     <script src="./assets/js/script.js"></script>

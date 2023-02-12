@@ -69,14 +69,6 @@ $(document).ready(function () {
 
   }
 
-  function htmlGetCoordinates(obj){
-    // hide get coordinates button
-    $('#get-coordinates-section').hide()
-
-    // display residential details 
-    
-  }
-
 
   function postalCodeJSONHandler(data) {
 
@@ -99,6 +91,18 @@ $(document).ready(function () {
 
     throw e;
   }
+
+  function htmlGetCoordinates(obj) {
+    // hide get coordinates button
+    $('#get-coordinates').hide(200)
+    
+    $('#exampleModal').modal('hide');
+
+    // display residential details 
+
+  }
+
+
 
   $(".modal-footer").on('click', "button[id='send-coordinates']", function (e) {
 
