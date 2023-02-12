@@ -16,23 +16,67 @@ $.ajax({
 
 
 
-const queryURLNasaPhoto = `https://images-api.nasa.gov/search?q=mars`;
+  const queryURLNasaPhoto = `https://images-api.nasa.gov/search?q=mars`;
 
-$.ajax({
-  url: queryURLNasaPhoto,
-  method: "GET"
-}).then(function(response) {
-  let images = response.collection.items;
+  $.ajax({
+    url: queryURLNasaPhoto,
+    method: "GET"
+  }).then(function(response) {
+    let images = response.collection.items;
+  
+    $("#today-gallery").empty();
 
-  for(let i = 0; i < 4; i++) {
-    let imageURL = images[i].links[0].href;
+    for(let i = 0; i < 8; i++) {
+      let randomIndex = Math.floor(Math.random() * images.length);
+      let imageURL = images[randomIndex].links[0].href;
+      let desc = images[randomIndex].data[0].description;
+      if (desc.length > 100) {
+      desc = desc.substring(0, 100) + "...";
+      }
+      let title = images[randomIndex].data[0].title;
+      if (title.length > 15) {
+        title = title.substring(0, 15) + "...";
+        }
 
-    let galleryHTML = `
-      <div class="col-md-3 col-lg-3 col-sm-12">
-        <img src="${imageURL}" alt="" class="img-fluid border-color gallery-img">
-      </div>
-    `;
+      let galleryHTML = `
+        <div class="col-md-3 col-lg-3 col-sm-12">
+          <img src="${imageURL}" alt="" class="img-fluid border-color gallery-img mt-3">
+          <h3 class="mt-3">${title}</h3>
+          <p class="mt-3">${desc}</p>
+        </div>
+      `;
+  
+      $("#today-gallery").append(galleryHTML);
+    }
+  });
+  
 
-    $("#today-gallery").append(galleryHTML);
-  }
+
+
+/*
+const settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://news-space.p.rapidapi.com/",
+	"method": "GET",
+	"headers": {
+		"X-RapidAPI-Key": "e59f1aabebmsh9d2cde2ad55bd9ap14a2e6jsna6c5035bd8dd",
+		"X-RapidAPI-Host": "news-space.p.rapidapi.com"
+	}
+};
+
+$.ajax(settings).done(function (response) {
+	console.log(response);
 });
+
+$.ajax(settings).done(function (response) {
+    const articles = response;
+    for (let i = 0; i < 10; i++) {
+      const title = articles[i].title;
+      const url = articles[i].url;
+      console.log(title);
+      console.log(url);
+    }
+});
+
+*/
