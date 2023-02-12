@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./assets/css/reset.css" type="text/css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <title>Space Jam Project</title>
     <link rel="stylesheet" href="./assets/css/script.css" type="text/css" />
@@ -63,10 +64,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#gallery">Gallery</a>
+              <a class="nav-link" href="#news">News</a>
             </li> 
             <li class="nav-item">
-              <a class="nav-link" href="#news">News</a>
+              <a class="nav-link" href="#gallery">Gallery</a>
             </li> 
             <li class="nav-item">
               <a class="nav-link" href="#news">Videos</a>
@@ -116,13 +117,13 @@
     </div>
   </div>     
 
-<div class="container mt-5">
+<div class="container">
   <div class="row">
 
-    <!-- Today's Gallery Section -->
-    <section class="w-100" id="gallery">
-        <div class="container-fluid my-5">
-            <h2 class="mb-3 text-center">Today's Gallery</h2>
+  <!-- Space News Section -->
+  <section class="w-100 mt-5" id="news">
+    <div class="container-fluid my-5 mt-3">
+        <h2 class="mb-3 text-center">Space News</h2>
             <div class="row" id="today-gallery">   
         </div>          
     </section>
@@ -142,39 +143,34 @@
             </div>
       </section>
 
-    <!-- Daily News Section -->
-    <section class="w-100 mt-5" id="news">
-        <div class="container-fluid my-5 mt-3">
-            <h2 class="mb-3 text-center">Daily News</h2>
-            <div class="row">
-              <div class="col-sm-12 col-md-6">
-                <img src="assets/images/space1.jpg" alt="" class="img-fluid">
-              </div>
-              <div class="col-sm-12 col-md-6 p-2">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, tempora. Itaque repellat accusamus quae deserunt rerum quod id, facere quos.
-              </div>
-            </div>
-            <div class="text-center mt-3">
-                <button class="btn btn-primary">More</button>
-            </div>         
-        </div>          
-    </section>
-
     <!-- Latest Videos Section -->
     <section class="w-100 mt-5" id="video">
         <div class="container-fluid my-5 mt-3">
             <h2 class="mb-3 text-center">Latest Videos</h2>
             <div class="row">
               <div class="col-sm-12 col-md-6">
-                <img src="assets/images/space2.jpg" alt="" class="img-fluid">
+                <video width="100%" class="border-color" controls>
+                  <source src="assets/videos/video1.mp4" type="video/mp4">
+                </video>
               </div>
               <div class="col-sm-12 col-md-6">
-                <img src="assets/images/space3.jpg" alt="" class="img-fluid">
+                <video width="100%" class="border-color" controls>
+                  <source src="assets/videos/video2.mp4" type="video/mp4">
+                </video>
               </div>
             </div>
-            <div class="col-12 text-center mt-3">
-                <button class="btn btn-primary">More</button>
-            </div> 
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <video width="100%" class="border-color" controls>
+                  <source src="assets/videos/video3.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <video width="100%" class="border-color" controls>
+                  <source src="assets/videos/video4.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
         </div>          
     </section>
 
@@ -195,7 +191,7 @@
     <!-- About Section -->
     <section class="w-100" id="about">
         <div class="container-fluid my-5 mt-3">
-            <h2 class="mb-3 text-center">About</h2>
+            <h2 class="mb-3 text-center">About Us</h2>
             <div class="row">
               <div class="col-12">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione eveniet ipsa corporis obcaecati nobis dolorem aperiam sit est. Iusto ullam laboriosam, numquam asperiores quisquam exercitationem placeat quasi a fugiat vitae tempore voluptatem. Placeat perferendis unde quis optio impedit ad magni recusandae quibusdam, dolorum blanditiis, id repellat voluptas a rerum enim.
