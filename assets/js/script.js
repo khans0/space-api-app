@@ -96,7 +96,7 @@ $(document).ready(function () {
     // hide get coordinates button
     $('#get-coordinates').hide(200)
     
-    $('#exampleModal').modal('hide');
+    $('#getCoordinatesDialog').modal('hide');
 
     // display residential details 
 
