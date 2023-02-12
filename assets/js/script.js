@@ -57,30 +57,62 @@ $(document).ready(function () {
 
   // https://nominatim.openstreetmap.org/search?q=mk62px&format=json&polygon=1&addressdetails=1
 
-  function getPostalCodeFromButton(postalCode) { 
+  function getPostalCodeFromButton(postalCode) {
 
     $.ajax({
       url: `https://nominatim.openstreetmap.org/search?q=${postalCode}&format=json&polygon=1&addressdetails=1`,
       type: "GET",
       dataType: "json",
-      success: postalCodeJSONHandler, // pass city lat and lon data 
-      error: errorHandler
+      success: postalCodeJSONHandler, // pass address detail
+      error: errorHandler // throe error incase, 
     });
 
-   }
+  }
 
-   function postalCodeJSONHandler(data){
+  function htmlGetCoordinates(obj){
+    // hide get coordinates button
+    $('#get-coordinates-section').hide()
 
-    console.log(data)
+    // display residential details 
+    
+  }
 
-   }
 
-   function errorHandler(e){
+  function postalCodeJSONHandler(data) {
+
+    obj = {
+      residential: data[0].address.residential,
+      lat: data[0].lat,
+      lon: data[0].lon,
+      city: data[0].address.city,
+      postcode: data[0].address.postcode,
+      country: data[0].address.country
+
+    }
+
+    console.log(obj)
+    htmlGetCoordinates(obj)
+
+  }
+
+  function errorHandler(e) {
 
     throw e;
-   }
+  }
+
+  $(".modal-footer").on('click', "button[id='send-coordinates']", function (e) {
+
+    e.preventDefault();
+    getPostalCodeFromButton('mk62px')
+
+
+  })
 
 });
+
+
+
+
 
 
 

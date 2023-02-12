@@ -36,17 +36,20 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body"> 
           <form>
             <div class="form-group">
               <label for="input-text" class="col-form-label text-color">Postcode:</label>
+
+              <!-- postal code input -->
               <input type="text" class="form-control" id="input-text">
             </div>
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Send</button>
+          <!-- get postal code! -->
+          <button type="button" class="btn btn-primary" id="send-coordinates">Send</button>
         </div>
       </div>
     </div>
@@ -108,9 +111,9 @@
 	</div>
 </div>
 
-  <div class="container-fluid text-center section-bg p-3">
+  <div class="container-fluid text-center section-bg p-3" id="get-coordinates-section">
     <div class="row">
-      <div class="col-12">
+      <div class="col-12" id="get-coordinates">
         <h3 class="mb-3">Track the International Space Station</h3>
         <button class="btn btn-outline-light btn-md" data-toggle="modal" data-target="#exampleModal">Click to Get Coordinates</button> 
       </div>
