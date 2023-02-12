@@ -95,10 +95,34 @@ $(document).ready(function () {
   function htmlGetCoordinates(obj) {
     // hide get coordinates button
     $('#get-coordinates').hide(200)
-    
+
     $('#getCoordinatesDialog').modal('hide');
 
     // display residential details 
+    openStreetMapPostCode(obj.lon, obj.lat)
+    
+
+  }
+  // get the coordinates on MAP
+  function openStreetMapPostCode(lon, lat) {
+    console.log(lon,lat)
+    map = new OpenLayers.Map("spaceAPIMap");
+    var mapnik = new OpenLayers.Layer.OSM();
+    var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
+    var toProjection = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
+    var position = new OpenLayers.LonLat(lon, lat).transform(fromProjection, toProjection);
+    var zoom = 15;
+
+    map.addLayer(mapnik);
+    map.setCenter(position, zoom);   
+
+    console.log(map)
+    
+
+    $("#spaceAPIMap").append(map.div)
+    $('#showMap').show()
+
+    
 
   }
 
