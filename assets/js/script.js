@@ -71,16 +71,19 @@ $(document).ready(function () {
 
 
   function postalCodeJSONHandler(data) {
+
+    console.log(data)
+
     try {
       obj = {
-        residential: data[0].address.residential,
+        residential: data[0].address.suburb,
         lat: data[0].lat,
         lon: data[0].lon,
         city: data[0].address.city,
         postcode: data[0].address.postcode,
         country: data[0].address.country
       }
-      console.log(obj)
+
       htmlGetCoordinates(obj)
 
     } catch (e) {
@@ -101,6 +104,33 @@ $(document).ready(function () {
     $('#getCoordinatesDialog').modal('hide');
 
     // display residential details 
+
+    // display MAP 
+
+    let resident_data = $("#resident-data");
+
+    console.log(obj)
+
+    $('<h3/>', {
+      class: "text-center",
+      text: ` ${obj.residential}`
+
+    }).appendTo(resident_data);
+
+
+    $('<p/>', {
+      html: `lat: ${obj.lat}`
+
+    }).appendTo(resident_data);
+    $('<p/>', {
+      html: `lon: ${obj.lat}`
+
+    }).appendTo(resident_data);
+
+
+
+
+
     openStreetMapPostCode(obj.lon, obj.lat)
 
 
@@ -120,7 +150,7 @@ $(document).ready(function () {
     var markers = new OpenLayers.Layer.Markers("Markers");
     map.addLayer(markers);
     markers.addMarker(new OpenLayers.Marker(position));
-    map.setCenter(position, zoom);  
+    map.setCenter(position, zoom);
 
     $("#spaceAPIMap").append(map.div)
     $('#showMap').show()
@@ -142,9 +172,9 @@ $(document).ready(function () {
     let addPostCode = '';
 
     postCode.forEach(element => {
-      addPostCode += element;      
+      addPostCode += element;
 
-    });    
+    });
 
     getPostalCodeFromButton(addPostCode)
 
