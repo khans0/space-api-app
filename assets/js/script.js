@@ -113,7 +113,7 @@ $(document).ready(function () {
 
     $('<h3/>', {
       class: "text-center",
-      text: ` ${obj.residential}`
+      text: ` ${obj.residential}, ${obj.city} `
 
     }).appendTo(resident_data);
 
@@ -123,7 +123,7 @@ $(document).ready(function () {
 
     }).appendTo(resident_data);
     $('<p/>', {
-      html: `lon: ${obj.lat}`
+      html: `lon: ${obj.lon}`
 
     }).appendTo(resident_data);
 
