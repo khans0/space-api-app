@@ -71,19 +71,21 @@ $(document).ready(function () {
 
 
   function postalCodeJSONHandler(data) {
+    try {
+      obj = {
+        residential: data[0].address.residential,
+        lat: data[0].lat,
+        lon: data[0].lon,
+        city: data[0].address.city,
+        postcode: data[0].address.postcode,
+        country: data[0].address.country
+      }
+      console.log(obj)
+      htmlGetCoordinates(obj)
 
-    obj = {
-      residential: data[0].address.residential,
-      lat: data[0].lat,
-      lon: data[0].lon,
-      city: data[0].address.city,
-      postcode: data[0].address.postcode,
-      country: data[0].address.country
-
+    } catch (e) {
+      throw e;
     }
-
-    console.log(obj)
-    htmlGetCoordinates(obj)
 
   }
 
@@ -100,29 +102,30 @@ $(document).ready(function () {
 
     // display residential details 
     openStreetMapPostCode(obj.lon, obj.lat)
-    
+
 
   }
   // get the coordinates on MAP
   function openStreetMapPostCode(lon, lat) {
-    console.log(lon,lat)
+    console.log(lon, lat)
     map = new OpenLayers.Map("spaceAPIMap");
     var mapnik = new OpenLayers.Layer.OSM();
+
     var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
     var toProjection = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
     var position = new OpenLayers.LonLat(lon, lat).transform(fromProjection, toProjection);
     var zoom = 15;
 
     map.addLayer(mapnik);
-    map.setCenter(position, zoom);   
-
-    console.log(map)
-    
+    var markers = new OpenLayers.Layer.Markers("Markers");
+    map.addLayer(markers);
+    markers.addMarker(new OpenLayers.Marker(position));
+    map.setCenter(position, zoom);  
 
     $("#spaceAPIMap").append(map.div)
     $('#showMap').show()
 
-    
+
 
   }
 
@@ -131,7 +134,19 @@ $(document).ready(function () {
   $(".modal-footer").on('click', "button[id='send-coordinates']", function (e) {
 
     e.preventDefault();
-    getPostalCodeFromButton('mk62px')
+
+    let postCode = $("#input-text").val().trim();
+
+    postCode = postCode.split(' ');
+
+    let addPostCode = '';
+
+    postCode.forEach(element => {
+      addPostCode += element;      
+
+    });    
+
+    getPostalCodeFromButton(addPostCode)
 
 
   })
