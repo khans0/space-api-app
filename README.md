@@ -85,7 +85,7 @@ No installation needed
 ## �� CREDITS
 ​
 Collaboratoers included:
-- Metin Ozgenc Mardi: Click [here](quora.com/profile/Ashish-Kulkarni-100) to visit their Github.
+- Metin Ozgenc Mardi: Click [here](https://github.com/ozgencmardi) to visit their Github.
 - Olaf Konopko: Click [here](https://github.com/MrFusion666) to visit their Github.
 - Niwantha Meepage: Click [here](https://github.com/niwantha33) to visit their Github.
 ​
