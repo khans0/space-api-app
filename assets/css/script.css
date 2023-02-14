@@ -178,6 +178,12 @@ h3 {
   color: #fff;
 }
 
+.btn, .number_input, .select_planet {
+  padding: 6px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
 footer {
   color: #bbb;
 }
