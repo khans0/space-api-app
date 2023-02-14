@@ -26,12 +26,15 @@
 
 <body>
 
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+   <!-- Modal -->
+  <!-- https://getbootstrap.com/docs/4.0/components/modal/ -->
+  <div class="modal fade" id="getCoordinatesDialog" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title text-color" id="exampleModalLabel">Get Coordinates</h5>
+          <!-- hide - data-dismiss="modal" -->
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -40,13 +43,16 @@
           <form>
             <div class="form-group">
               <label for="input-text" class="col-form-label text-color">Postcode:</label>
+
+              <!-- postal code input -->
               <input type="text" class="form-control" id="input-text">
             </div>
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Send</button>
+          <!-- get postal code! -->
+          <button type="button" class="btn btn-primary" id="send-coordinates">Send</button>
         </div>
       </div>
     </div>
