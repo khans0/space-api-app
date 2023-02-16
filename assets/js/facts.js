@@ -6,6 +6,9 @@ const spaceFacts = [
     "The sun is actually a star, and it's about 4.6 billion years old.",
     "There are more possible iterations of a game of chess than there are atoms in the observable universe.",
     "The temperature in the void of space is about minus 270.45 °C",
+    "There are an estimated 100-400 billion stars in our galaxy, the Milky Way.",
+    "In the observable universe there are an estimated 2 trillion (2,000,000,000,000) galaxies.",
+    "The International Space Station is the largest ever crewed object in space.",
   ];
   
   function generateFact() {
