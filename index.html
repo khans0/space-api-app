@@ -247,7 +247,7 @@
 
     <!-- Space Facts -->
     <section class="w-100" id="facts">
-      <div class="container-fluid my-5 mt-3">
+      <div class="container-fluid text-center my-5 mt-3">
         <h2 class="mb-3 text-center">Get your space facts here!</h2>
         <div id="fact"></div>
         <div class="text-center"><button onclick="generateFact()" class="btn btn-primary">Generate Fact</button></div>    
@@ -264,16 +264,16 @@
               <div class="form-group row">
                 <div class="col-sm-12 col-md-6">
                   <label for="name">Name</label>
-                  <input type="text" class="form-control" id="name">
+                  <input type="text" class="form-control" id="name" required>
                 </div>
                 <div class="col-sm-12 col-md-6">
                   <label for="email">Email</label>
-                  <input type="email" class="form-control" id="email">
+                  <input type="email" class="form-control" id="email" required>
                 </div>
               </div>
               <div class="form-group">
                 <label for="message">Message</label>
-                <textarea class="form-control" id="message" rows="3"></textarea>
+                <textarea class="form-control" id="message" rows="3" required></textarea>
               </div>
               <div class="form-group mt-5">
                 <button type="submit" class="btn btn-primary btn-block">Submit</button>
