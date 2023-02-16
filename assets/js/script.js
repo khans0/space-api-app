@@ -209,3 +209,27 @@ $.ajax(settings).done(function (response) {
 });
 
 */
+
+const contactForm = document.getElementById('contact-form');
+const thankYouMessage = document.getElementById('thank-you');
+
+contactForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const formData = {
+    name: document.getElementById('name').value,
+    email: document.getElementById('email').value,
+    message: document.getElementById('message').value,
+  };
+
+  // Save data to local storage
+  localStorage.setItem('contactFormData', JSON.stringify(formData));
+
+  const thankYouMessageText = `Thank you for your message, ${formData.name}! We will get back to you as soon as possible.`;
+  const thankYouElement = document.createElement('p');
+  thankYouElement.textContent = thankYouMessageText;
+  thankYouMessage.replaceChild(thankYouElement, thankYouMessage.children[0]);
+
+  contactForm.style.display = 'none';
+  thankYouMessage.style.display = 'block';
+});
